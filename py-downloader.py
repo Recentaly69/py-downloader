@@ -7,7 +7,7 @@ def main():
     url = sys.argv[1] # takes the second cmd argument as source
 
     response = requests.get(url, stream=True) # parse download
-    length_of_download = int(response.headers.get('content-length')) # get file size
+    length_of_download = float(response.headers.get('content-length')) # get file size
     name_of_file = url.split("/")[-1]
     name_of_file = name_of_file.replace("%",'').replace('.','').replace("20",'').replace("-",'').replace("fitgirlrepackssite",'') # removes unnecessary strings
 
