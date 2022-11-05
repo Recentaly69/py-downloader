@@ -9,9 +9,7 @@ def main():
     response = requests.get(url, stream=True) # parse download
     length_of_download = int(response.headers.get('content-length')) # get file size
     name_of_file = url.split("/")[-1]
-    name_of_file = name_of_file.replace("%",'').replace('.','').replace("20",'').replace("-",'').replace("fitgirlrepackssite",'')
-
-    #name_of_file = name_of_file.replace("% | . | -", '') # remove the... other unecessary chars? idk but I'm too scared to delete the stamement above
+    name_of_file = name_of_file.replace("%",'').replace('.','').replace("20",'').replace("-",'').replace("fitgirlrepackssite",'') # removes unnecessary strings
 
     with open(name_of_file, "wb") as data:
 
