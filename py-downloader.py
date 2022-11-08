@@ -18,7 +18,7 @@ def main():
         for datasize in response.iter_content(chunk_size=4096): # split downloads to 4MB worth of data for progress bar
             download_progress += len(datasize) # add progress for what we already downloaded
             data.write(datasize) # write the file into our new file
-            finished = int(50 * download_progress / length_of_download)
+            finished = int(50 * download_progress / length_of_download) # Determine length of the progress bar (estimated size)
             sys.stdout.write("\r[%s%s]" % ('*' * finished, ' ' * (50-finished)) )  # the progress bar :)  
             sys.stdout.flush() # reset stdout.write output
 
